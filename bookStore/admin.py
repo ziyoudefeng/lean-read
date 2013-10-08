@@ -1,6 +1,6 @@
 # -*- coding: utf-8-*-
 from django.contrib import admin
-from book.models import Book, Chapter, ReadingLog
+from bookStore.models import Book, Chapter, ReadingLog
 
 
 class BookAdmin(admin.ModelAdmin):

@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 from django.shortcuts import render_to_response
-from book.models import Book
+from bookStore.models import Book
 from django.conf import settings
 
 
