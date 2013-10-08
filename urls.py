@@ -7,6 +7,7 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
+        url(r'^$', 'book.views.overview'),
         url(r'^admin/', include(admin.site.urls)),
         )
 
