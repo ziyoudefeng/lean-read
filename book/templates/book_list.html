@@ -1,6 +1,6 @@
 <ul>
     {% for book in books %}
-    <li> {{ book.name }}
+    <li> <a href="{% url 'book.views.book_detail' book.bookId %}">{{ book.name }}</a>
             {% if book.cnFile %}
             <a href='{{ MEDIA_URL }}{{ book.cnFile }}'>cn</a>
             {% endif %}
