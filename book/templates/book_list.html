@@ -1,13 +1,12 @@
-<div>
+<ul>
     {% for book in books %}
-    <div>
-        {{ book.name }}
+    <li> {{ book.name }}
             {% if book.cnFile %}
             <a href='{{ MEDIA_URL }}{{ book.cnFile }}'>cn</a>
             {% endif %}
             {% if book.enFile %}
             <a href='{{ MEDIA_URL }}{{ book.enFile }}'>en</a>
             {% endif %}
-    </div>
+    </li>
     {% endfor %}
-</div>
+</ul>
