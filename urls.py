@@ -6,21 +6,24 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-urlpatterns = patterns('',
-        url(r'^$', 'book.views.overview'),
-        url(r'^admin/', include(admin.site.urls)),
-        )
+urlpatterns = patterns(
+    '',
+    url(r'^$', 'book.views.book_list'),
+    url(r'^book/(\d+)$', 'book.views.book_detail'),
+    url(r'^admin/', include(admin.site.urls)),
+)
 
 if settings.DEBUG:
-    urlpatterns += patterns('',
-            url(r'^%s(?P<path>.*)$' % settings.MEDIA_URL.lstrip('/'),
-                'django.views.static.serve',
-                {'document_root': settings.MEDIA_ROOT,
-                 }
-                ),
-            url(r'^%s(?P<path>.*)$' % settings.STATIC_URL.lstrip('/'),
-                'django.views.static.serve',
-                {'document_root': settings.STATIC_ROOT,
-                 }
-                ),
-            )
+    urlpatterns += patterns(
+        '',
+        url(r'^%s(?P<path>.*)$' % settings.MEDIA_URL.lstrip('/'),
+            'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT,
+             }
+            ),
+        url(r'^%s(?P<path>.*)$' % settings.STATIC_URL.lstrip('/'),
+            'django.views.static.serve',
+            {'document_root': settings.STATIC_ROOT,
+             }
+            ),
+    )
