@@ -19,6 +19,7 @@ class Chapter(models.Model):
     book = models.ForeignKey(Book)
     chapNo = models.IntegerField('章节序号')
     chapName = models.CharField('章节名', max_length=100, blank=True)
+    abstract = models.CharField('内容简介', max_length=500, blank=True)
 
     def __unicode__(self):
         return '%s-Chap %s' % (self.book, self.chapNo)
