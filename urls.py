@@ -9,7 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     url(r'^$', 'bookStore.views.book_list'),
-    url(r'^book/(\d+)$', 'bookStore.views.book_detail'),
+    url(r'^book/', include('bookStore.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
