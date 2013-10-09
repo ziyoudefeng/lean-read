@@ -12,7 +12,11 @@ def book_list(request):
 
 
 def book_detail(request, bookId):
+    try:
+        book = Book.objects.get(bookId=bookId)
+    except Book.DoesNotExist:
+        book = None
     content = {'MEDIA_URL': settings.MEDIA_URL,
-               'book': Book.objects.get(bookId=bookId)
+               'book': book
                }
     return render_to_response('book_detail.html', content)
