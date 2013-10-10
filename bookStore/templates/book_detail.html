@@ -1,5 +1,14 @@
-{% if book %}
-<h2>{{ book.name }}</h2>
+{% if not book %}
+    book does not exist
 {% else %}
-book does not exist
+    <h2>{{ book.name }}</h2>
+
+    {% if book.chapters %}
+    <ul>
+        <h3>chapters</h3>
+        {% for chap in book.chapters %}
+        <li>{{  chap.chapNo }} -- {{ chap.chapName }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 {% endif %}

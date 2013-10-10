@@ -10,6 +10,9 @@ class Book(models.Model):
     cnFile = models.FileField(upload_to='books/', blank=True)
     enFile = models.FileField(upload_to='books/', blank=True)
 
+    def chapters(self):
+        return self.chapter_set.order_by('chapNo')
+
     def __unicode__(self):
         return self.name
 
