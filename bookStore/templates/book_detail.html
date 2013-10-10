@@ -7,7 +7,9 @@
     <ul>
         <h3>chapters</h3>
         {% for chap in book.chapters %}
-        <li>{{  chap.chapNo }} -- {{ chap.chapName }}</li>
+        <li><h4>{{  chap.chapNo }} -- {{ chap.chapName }}</h4>
+        {{ chap.abstract }}
+        </li>
         {% endfor %}
     </ul>
     {% endif %}
