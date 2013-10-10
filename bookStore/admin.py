@@ -8,7 +8,7 @@ class BookAdmin(admin.ModelAdmin):
 
 
 class ChapterAdmin(admin.ModelAdmin):
-    list_display = ('book', 'chapNo', 'chapName')
+    list_display = ('book', 'chapNo', 'chapName', 'abstract')
 
 
 class ReadingLogAdmin(admin.ModelAdmin):
