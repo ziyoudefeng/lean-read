@@ -157,6 +157,5 @@ LOGGING = {
 
 try:
     from local_settings import *
-    print 'use local_settings instead'
 except:
     pass
