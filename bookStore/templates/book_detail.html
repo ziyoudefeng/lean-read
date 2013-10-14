@@ -8,14 +8,27 @@
 <h2>{{ book.name }}</h2>
 
     {% if book.chapters %}
+    <button type="button" class="btn" data-toggle="collapse" data-target=".book-chapter">
+         折叠章节摘要 
+      </button>
     <h3>chapters</h3>
-    <div class="">
+    <div class="panel-group">
         {% for chap in book.chapters %}
-        <li><h4>{{  chap.chapNo }} -- {{ chap.chapName }}</h4>
-        {{ chap.abstract }}
-        </li>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                {{  chap.chapNo }} -- {{ chap.chapName }}
+            </div>
+        </div>
+        <div class="panel-collapse collapse in book-chapter">
+            <div class="panel-body">
+                {{ chap.abstract }}
+            </div>
+        </div>
+        </div>
         {% endfor %}
     {% endif %}
+
 {% else %}
 book does not exist
 {% endif %}
