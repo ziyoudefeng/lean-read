@@ -8,17 +8,17 @@
 <h2> 图书列表 </h2>
 
 {% if books %}
-<div class="panel-group">
+<div class="list-group">
 {% for book in books %}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
+    <div class="list-group-item">
+        <div class="book-title">
           <a href="{% url 'bookStore.views.book_detail' book.bookId %}">
             {{ book.name }}
           </a>
-      </h4>
-    </div>
-    <div class="panel-body">
+          </div>
+      {% if book.cnFile or book.enFile %}
+      下载：
+      {% endif %}
       {% if book.cnFile %}
         <a href='{{ MEDIA_URL }}{{ book.cnFile }}'>cn</a>
       {% endif %}
