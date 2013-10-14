@@ -1,16 +1,22 @@
-{% if not book %}
-    book does not exist
-{% else %}
-    <h2>{{ book.name }}</h2>
+{% extends "base.html" %}
+{% block title %}
+    <title>图书详情</title>
+{% endblock %}
+
+{% block content %}
+{% if book %}
+<h2>{{ book.name }}</h2>
 
     {% if book.chapters %}
-    <ul>
-        <h3>chapters</h3>
+    <h3>chapters</h3>
+    <div class="">
         {% for chap in book.chapters %}
         <li><h4>{{  chap.chapNo }} -- {{ chap.chapName }}</h4>
         {{ chap.abstract }}
         </li>
         {% endfor %}
-    </ul>
     {% endif %}
+{% else %}
+book does not exist
 {% endif %}
+{% endblock %}

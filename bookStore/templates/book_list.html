@@ -1,12 +1,35 @@
-<ul>
-    {% for book in books %}
-    <li> <a href="{% url 'bookStore.views.book_detail' book.bookId %}">{{ book.name }}</a>
-            {% if book.cnFile %}
-            <a href='{{ MEDIA_URL }}{{ book.cnFile }}'>cn</a>
-            {% endif %}
-            {% if book.enFile %}
-            <a href='{{ MEDIA_URL }}{{ book.enFile }}'>en</a>
-            {% endif %}
-    </li>
-    {% endfor %}
-</ul>
+{% extends "base.html" %}
+
+{% block title %}
+    <title>图书列表</title>
+{% endblock %}
+
+{% block content %}
+<h2> 图书列表 </h2>
+
+{% if books %}
+<div class="panel-group">
+{% for book in books %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a href="{% url 'bookStore.views.book_detail' book.bookId %}">
+            {{ book.name }}
+          </a>
+      </h4>
+    </div>
+    <div class="panel-body">
+      {% if book.cnFile %}
+        <a href='{{ MEDIA_URL }}{{ book.cnFile }}'>cn</a>
+      {% endif %}
+      {% if book.enFile %}
+        <a href='{{ MEDIA_URL }}{{ book.enFile }}'>en</a>
+    {% endif %}
+    </div>
+{% endfor %}
+</div>
+{% else %}
+尚未添加图书，现在添加?
+{% endif %}
+
+{% endblock %}
