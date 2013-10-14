@@ -7,6 +7,30 @@
 1. 电子书分享与下载
 2. 按章节标注阅读信息
 
+开发环境
+--------
+
+# 依赖
+
+1. python 2.7
+2. mysql
+3. git(recommended)
+4. pip(recommended)
+5. Chrome(recommended)
+
+# 搭建
+
+1. 安装 python 类库
+
+    ``` sudo pip install -r requirement.txt```
+2. 数据库配置
+
+    settings.py 中修改数据库链接信息.
+
+    ``` python manage.py syncdb``` 构建数据库
+
+3. 网站数据定期备份在 dotReadingMedia 库中。clone 并导入 json 文件即可
+
 主要页面
 --------
 
