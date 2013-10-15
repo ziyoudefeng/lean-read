@@ -1,5 +1,5 @@
-技能分享网站
-============
+精益阅读
+========
 
 功能列表
 --------
@@ -22,14 +22,16 @@
 
 1. 安装 python 类库
 
-    ``` sudo pip install -r requirement.txt```
+    ```$ sudo pip install -r requirement.txt```
 2. 数据库配置
 
-    settings.py 中修改数据库链接信息.
+    settings.py 中修改数据库链接信息. 推荐另存为 local_settings.py
+3. 创建数据库 schema
 
-    ``` python manage.py syncdb``` 构建数据库
+    登录数据库执行```create database lean_read;```
+3. 更新 submodule, 加载资源文件和数据库数据
 
-3. 网站数据定期备份在 dotReadingMedia 库中。clone 并导入 json 文件即可
+    ```$ ./install.sh```
 
 主要页面
 --------
