@@ -13,7 +13,7 @@
     <div class="list-group-item">
         <div class="book-title">
           <a href="{% url 'bookStore.views.book_detail' book.bookId %}">
-            {{ book.name }}
+            {{ book.title }}
           </a>
           </div>
       {% if book.cnFile or book.enFile %}

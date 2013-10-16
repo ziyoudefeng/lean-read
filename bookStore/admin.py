@@ -4,7 +4,7 @@ from bookStore.models import Book, Chapter, ReadingLog
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('name', 'cnFile', 'enFile')
+    list_display = ('title', 'cnFile', 'enFile')
 
 
 class ChapterAdmin(admin.ModelAdmin):

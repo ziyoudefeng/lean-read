@@ -6,7 +6,7 @@ import datetime
 
 class Book(models.Model):
     bookId = models.AutoField(primary_key=True)
-    name = models.CharField('书名', max_length=100)
+    title = models.CharField('书名', max_length=100)
     cnFile = models.FileField(upload_to='books/', blank=True)
     enFile = models.FileField(upload_to='books/', blank=True)
 
@@ -14,7 +14,7 @@ class Book(models.Model):
         return self.chapter_set.order_by('chapNo')
 
     def __unicode__(self):
-        return self.name
+        return self.title
 
 
 class Chapter(models.Model):
