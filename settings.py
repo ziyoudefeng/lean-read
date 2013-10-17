@@ -110,6 +110,7 @@ WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'bookStore/templates'),
+    os.path.join(BASE_DIR, 'accounts/templates'),
     os.path.join(BASE_DIR, 'templates'),
 )
 
@@ -123,7 +124,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'widget_tweaks',
+    # apps created by ourselves
     'bookStore',
+    'accounts',
 )
 
 # A sample logging configuration. The only tangible logging
