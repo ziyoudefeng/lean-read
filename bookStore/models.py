@@ -25,7 +25,7 @@ class Chapter(models.Model):
     abstract = models.CharField('内容简介', max_length=500, blank=True)
 
     def __unicode__(self):
-        return '%s-Chap %s' % (self.book, self.chapNo)
+        return u'%s-Chap %s' % (self.book, self.chapNo)
 
 
 class ReadingLog(models.Model):
